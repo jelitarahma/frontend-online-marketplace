@@ -8,9 +8,9 @@ import { productService, Product } from '@/lib/services/productService';
 import saleImage from './assets/images/sale.jpg';
 
 const COLORS = {
-  primary: '#1B5E20',
-  cream: '#FAFAF5',
-  lightGreen: '#E8F5E9',
+  primary: '#3B82F6',
+  cream: '#F8FAFC',
+  lightBlue: '#EFF6FF',
 };
 
 function getCategoryIcon(categoryName: string) {
@@ -67,10 +67,10 @@ function HomeProductCard({ product }: { product: Product }) {
         </div>
         {/* Content */}
         <div className="p-2">
-          <h6 className="text-xs font-medium text-gray-800 line-clamp-2 mt-2 mb-4 leading-tight group-hover:text-green-700 transition-colors">
+          <h6 className="text-xs font-medium text-gray-800 line-clamp-2 mt-2 mb-4 leading-tight group-hover:text-blue-700 transition-colors">
             {product.name}
           </h6>
-          <p className="text-sm font-bold text-green-700">
+          <p className="text-sm font-bold text-blue-700">
             {productService.formatPrice(lowestPrice)}
           </p>
         </div>
@@ -145,7 +145,7 @@ export default function HomePage() {
           <div className="absolute top-[55%] lg:top-[50%] left-[5%] lg:left-[2%] z-20 w-full max-w-md lg:max-w-lg">
             <div className="pt-5 lg:p-0">
               <p className="text-gray-600 text-base md:text-lg mb-5 leading-relaxed font-medium bg-white/60 lg:bg-transparent backdrop-blur-sm lg:backdrop-blur-none rounded-xl">
-                Welcome to JShope, your ultimate destination for everything you need. From trending fashion to the latest gadgets, we bring the world's best products right to your doorstep.
+                Welcome to Online Marketplace, your ultimate destination for everything you need. From trending fashion to the latest gadgets, we bring the world's best products right to your doorstep.
               </p>
               <Link
                 href="/products"
@@ -177,7 +177,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-xl md:text-2xl font-bold text-gray-800">Featured Categories</h3>
-            <Link href="/products" className="text-green-700 font-semibold hover:text-green-800 text-sm flex items-center gap-1">
+            <Link href="/products" className="text-blue-700 font-semibold hover:text-blue-800 text-sm flex items-center gap-1">
               See All Deals
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -199,10 +199,10 @@ export default function HomePage() {
                   href={`/products?category=${category._id}`}
                   className="flex flex-col items-center group"
                 >
-                  <div className="w-16 h-16 flex items-center justify-center mb-2 bg-green-50 rounded-full border-2 border-transparent group-hover:border-green-300 group-hover:bg-green-100 transition-all shadow-sm">
+                  <div className="w-16 h-16 flex items-center justify-center mb-2 bg-blue-50 rounded-full border-2 border-transparent group-hover:border-blue-300 group-hover:bg-blue-100 transition-all shadow-sm">
                     {getCategoryIcon(category.name)}
                   </div>
-                  <span className="text-xs font-medium text-gray-600 group-hover:text-green-700 text-center max-w-[80px] truncate">
+                  <span className="text-xs font-medium text-gray-600 group-hover:text-blue-700 text-center max-w-[80px] truncate">
                     {category.name}
                   </span>
                 </Link>
@@ -282,10 +282,10 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-4">
             <div>
-              <p className="text-green-600 text-xs font-semibold uppercase tracking-wider mb-1">Top Picks</p>
+              <p className="text-blue-600 text-xs font-semibold uppercase tracking-wider mb-1">Top Picks</p>
               <h3 className="text-xl md:text-2xl font-bold text-gray-800">Featured Products</h3>
             </div>
-            <Link href="/products" className="text-green-700 font-semibold hover:text-green-800 text-sm flex items-center gap-1">
+            <Link href="/products" className="text-blue-700 font-semibold hover:text-blue-800 text-sm flex items-center gap-1">
               View All
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -308,7 +308,7 @@ export default function HomePage() {
       </section>
 
       {/* Special Offer Banner with Countdown */}
-      <section className="py-5" style={{ backgroundColor: COLORS.lightGreen }}>
+      <section className="py-5" style={{ backgroundColor: COLORS.lightBlue }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-2xl overflow-hidden h-[300px] md:h-[350px] flex items-center" style={{ backgroundColor: '#182074' }}>
             {/* Left side - Text content */}
@@ -359,12 +359,12 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-6">
             <div>
-              <p className="text-green-600 text-xs font-semibold uppercase tracking-wider mb-1">Today's Deal</p>
+              <p className="text-blue-600 text-xs font-semibold uppercase tracking-wider mb-1">Today's Deal</p>
               <h3 className="text-xl md:text-2xl font-bold text-gray-800">Deals of the Day</h3>
             </div>
-            <div className="flex items-center gap-2 bg-green-50 px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full">
               <span className="text-xs text-gray-500">Ends in:</span>
-              <div className="flex items-center gap-1 font-mono font-bold text-green-700 text-sm">
+              <div className="flex items-center gap-1 font-mono font-bold text-blue-700 text-sm">
                 <span className="bg-white px-2 py-1 rounded">05</span>
                 <span>:</span>
                 <span className="bg-white px-2 py-1 rounded">23</span>

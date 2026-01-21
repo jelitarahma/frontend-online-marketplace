@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useEffect, useState, useCallback } from 'react';
 import { usePathname } from 'next/navigation';
 import { authService } from '@/lib/services/authService';
@@ -112,12 +113,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2 group">
-            <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center shadow-md group-hover:scale-105 transition-transform">
-              <span className="text-white font-bold text-lg">JS</span>
-            </div>
+            <Image 
+              src="/assets/online-ecommerce-logo.png" 
+              alt="Logo" 
+              width={150} 
+              height={50} 
+              className="object-contain"
+              priority
+            />
             <div className="hidden sm:block">
-              <span className="text-lg font-bold text-gray-800">JShope</span>
-              <span className="block text-[10px] text-gray-500 -mt-1">by Jelita Rahma</span>
+              <span className="text-lg font-bold text-gray-800">Online Marketplace</span>
+              <span className="block text-[10px] text-gray-500 -mt-1">by Binus Learning</span>
             </div>
           </Link>
 
@@ -129,8 +135,8 @@ export default function Navbar() {
                 className={`
                   relative font-medium text-sm py-2 transition-colors
                   ${pathname === link.href
-                    ? 'text-amber-600 after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-amber-500 after:rounded-full'
-                    : 'text-gray-700 hover:text-amber-600'}
+                    ? 'text-blue-600 after:absolute after:-bottom-1 after:left-0 after:w-full after:h-0.5 after:bg-blue-500 after:rounded-full'
+                    : 'text-gray-700 hover:text-blue-600'}
                 `}
               >
                 {link.label}
@@ -147,7 +153,7 @@ export default function Navbar() {
                     className={`
                       relative p-2 rounded-full transition-colors
                       ${pathname === '/cart'
-                        ? 'bg-amber-100 text-amber-700'
+                        ? 'bg-blue-100 text-blue-700'
                         : 'text-gray-700 hover:bg-gray-100'}
                     `}
                     title="Keranjang"
@@ -168,7 +174,7 @@ export default function Navbar() {
                     onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                     className="flex items-center gap-2 focus:outline-none"
                   >
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center text-white font-semibold shadow-md">
+                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-blue-500 to-blue-700 flex items-center justify-center text-white font-semibold shadow-md">
                       {userInitial}
                     </div>
                     <span className="font-medium text-gray-800 max-w-[140px] truncate hidden lg:block">
@@ -193,7 +199,7 @@ export default function Navbar() {
 
                       <Link
                         href="/clientArea/orders"
-                        className="flex items-center gap-3 px-5 py-3 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-colors"
+                        className="flex items-center gap-3 px-5 py-3 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors"
                         onClick={() => setIsUserMenuOpen(false)}
                       >
                         <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -226,13 +232,13 @@ export default function Navbar() {
               <div className="flex items-center gap-4">
                 <Link
                   href="/auth?mode=login"
-                  className="text-gray-700 font-medium hover:text-amber-600 transition"
+                  className="text-gray-700 font-medium hover:text-blue-600 transition"
                 >
                   Masuk
                 </Link>
                 <Link
                   href="/auth?mode=register"
-                  className="px-5 py-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-medium rounded-full hover:brightness-110 transition shadow-sm"
+                  className="px-5 py-2 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-medium rounded-full hover:brightness-110 transition shadow-sm"
                 >
                   Daftar
                 </Link>
@@ -265,7 +271,7 @@ export default function Navbar() {
                 className={`
                   px-4 py-3 rounded-lg font-medium
                   ${pathname === link.href
-                    ? 'bg-amber-50 text-amber-700'
+                    ? 'bg-blue-50 text-blue-700'
                     : 'text-gray-700 hover:bg-gray-50'}
                 `}
                 onClick={() => setIsMenuOpen(false)}
@@ -281,7 +287,7 @@ export default function Navbar() {
                     href="/cart"
                     className={`
                       px-4 py-3 rounded-lg font-medium flex items-center gap-3
-                      ${pathname === '/cart' ? 'bg-amber-50 text-amber-700' : 'text-gray-700 hover:bg-gray-50'}
+                      ${pathname === '/cart' ? 'bg-blue-50 text-blue-700' : 'text-gray-700 hover:bg-gray-50'}
                     `}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -337,14 +343,14 @@ export default function Navbar() {
               <div className="flex gap-3 pt-4 mt-4 border-t border-gray-200 px-2">
                 <Link
                   href="/auth?mode=login"
-                  className="flex-1 py-3 text-center border border-amber-500 text-amber-600 rounded-lg font-medium hover:bg-amber-50"
+                  className="flex-1 py-3 text-center border border-blue-500 text-blue-600 rounded-lg font-medium hover:bg-blue-50"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Masuk
                 </Link>
                 <Link
                   href="/auth?mode=register"
-                  className="flex-1 py-3 text-center bg-amber-500 text-white rounded-lg font-medium hover:bg-amber-600"
+                  className="flex-1 py-3 text-center bg-blue-500 text-white rounded-lg font-medium hover:bg-blue-600"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Daftar

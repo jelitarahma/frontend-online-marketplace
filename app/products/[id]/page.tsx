@@ -75,7 +75,7 @@ export default function ProductDetailPage() {
         text: 'Please login to add items to your cart.',
         showCancelButton: true,
         confirmButtonText: 'Login',
-        confirmButtonColor: '#f59e0b',
+        confirmButtonColor: '#3b82f6',
       }).then((result) => {
         if (result.isConfirmed) {
           router.push('/auth?mode=login');
@@ -100,7 +100,7 @@ export default function ProductDetailPage() {
         showCancelButton: true,
         confirmButtonText: 'Go to Cart',
         cancelButtonText: 'Continue Shopping',
-        confirmButtonColor: '#f59e0b',
+        confirmButtonColor: '#3b82f6',
       }).then((result) => {
         if (result.isConfirmed) {
           router.push('/cart');
@@ -118,7 +118,7 @@ export default function ProductDetailPage() {
     }
   };
 
-  const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://jshope-backend-phs3.vercel.app';
+  const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://backend-online-marketplace.vercel.app';
   const getImageUrl = (path?: string): string => {
     if (!path) return '/placeholder-product.png';
     let url = path;
@@ -330,7 +330,7 @@ export default function ProductDetailPage() {
                     onClick={() => setSyncedImage(index)}
                     className={`
                       relative w-24 h-24 rounded-2xl overflow-hidden flex-shrink-0 border-2 transition-all
-                      ${activeImage === index ? 'border-amber-500 ring-2 ring-amber-100' : 'border-transparent hover:border-stone-200'}
+                      ${activeImage === index ? 'border-blue-500 ring-2 ring-blue-100' : 'border-transparent hover:border-stone-200'}
                     `}
                   >
                      <Image 
@@ -361,7 +361,7 @@ export default function ProductDetailPage() {
                  </div>
                  <span className="text-sm text-stone-500 font-medium">{rating} ({reviewCount} Review)</span>
                  <span className="text-stone-300">|</span>
-                 <span className="text-sm text-green-600 font-medium bg-green-50 px-2 py-0.5 rounded-md">In Stock</span>
+                 <span className="text-sm text-blue-600 font-medium bg-blue-50 px-2 py-0.5 rounded-md">In Stock</span>
               </div>
               <div className="flex items-end gap-3 py-2">
                  <span className="text-3xl font-bold text-stone-900 min-w-[max-content]">
@@ -407,7 +407,7 @@ export default function ProductDetailPage() {
                           className={`
                             px-4 py-2 rounded-lg border-2 font-medium text-sm transition-all min-w-[3rem]
                             ${isSelected 
-                                ? 'border-amber-500 bg-amber-50 text-amber-900' 
+                                ? 'border-blue-500 bg-blue-50 text-blue-900' 
                                 : isOutOfStock
                                     ? 'border-stone-100 bg-stone-50 text-stone-300 cursor-not-allowed decoration-slice'
                                     : 'border-stone-200 text-stone-600 hover:border-stone-300 hover:bg-stone-50'
@@ -425,7 +425,7 @@ export default function ProductDetailPage() {
                 <div className="flex items-center border-2 border-stone-200 rounded-xl bg-white h-14">
                     <button 
                         onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                        className="w-12 h-full flex items-center justify-center text-stone-500 hover:text-amber-600 transition-colors"
+                        className="w-12 h-full flex items-center justify-center text-stone-500 hover:text-blue-600 transition-colors"
                     >
                         -
                     </button>
@@ -437,7 +437,7 @@ export default function ProductDetailPage() {
                     />
                     <button 
                         onClick={() => setQuantity(Math.min(selectedVariant?.stock || 99, quantity + 1))}
-                        className="w-12 h-full flex items-center justify-center text-stone-500 hover:text-amber-600 transition-colors"
+                        className="w-12 h-full flex items-center justify-center text-stone-500 hover:text-blue-600 transition-colors"
                     >
                         +
                     </button>
@@ -454,7 +454,7 @@ export default function ProductDetailPage() {
                  <button
                     onClick={() => handleAddToCart(true)}
                     disabled={isAddingToCart || selectedVariant?.stock === 0}
-                    className="flex-1 bg-amber-400 text-stone-900 h-14 rounded-xl font-bold hover:bg-amber-500 transition-colors flex items-center justify-center gap-2 px-8 shadow-lg shadow-amber-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="flex-1 bg-blue-400 text-stone-900 h-14 rounded-xl font-bold hover:bg-blue-500 transition-colors flex items-center justify-center gap-2 px-8 shadow-lg shadow-blue-100 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                     Buy Now
                 </button>
@@ -482,7 +482,7 @@ export default function ProductDetailPage() {
                         ].map((social) => (
                              <button 
                                 key={social.name} 
-                                className="flex items-center justify-center hover:text-amber-600 transition-colors w-8 h-8 bg-stone-100 hover:bg-stone-200 rounded-full text-stone-600" 
+                                 className="flex items-center justify-center hover:text-blue-600 transition-colors w-8 h-8 bg-stone-100 hover:bg-stone-200 rounded-full text-stone-600" 
                                 title={social.name}
                              >
                                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -530,8 +530,8 @@ export default function ProductDetailPage() {
           <div className="mt-5 pb-5">
             <div className="flex items-center justify-between mb-8">
                  <div className="space-y-1">
-                    <span className="text-amber-500 font-bold uppercase tracking-wider text-sm flex items-center gap-2">
-                        <span className="w-8 h-px bg-amber-500"></span> Related Products
+                    <span className="text-blue-500 font-bold uppercase tracking-wider text-sm flex items-center gap-2">
+                        <span className="w-8 h-px bg-blue-500"></span> Related Products
                     </span>
                     <h2 className="text-3xl font-bold text-stone-900 pb-3">Explore Related Products</h2>
                  </div>
@@ -545,7 +545,7 @@ export default function ProductDetailPage() {
 
                  return (
                     <Link href={`/products/${p._id}`} key={p._id} className="group h-full block">
-                      <div className="bg-white rounded-xl overflow-hidden border border-stone-100 hover:border-amber-200 hover:shadow-xl transition-all duration-300 h-full flex flex-col relative w-full">
+                      <div className="bg-white rounded-xl overflow-hidden border border-stone-100 hover:border-blue-200 hover:shadow-xl transition-all duration-300 h-full flex flex-col relative w-full">
                          <div className="absolute top-3 left-3 z-10">
                             <span className="inline-block px-3 py-1 bg-stone-50 text-stone-600 text-xs font-bold uppercase tracking-wider rounded-full border border-stone-100/50 backdrop-blur-sm">
                               {categoryName}
@@ -562,7 +562,7 @@ export default function ProductDetailPage() {
                             />
                         </div>
                         <div className="p-4 flex flex-col flex-grow">
-                          <h4 className="text-lg font-bold text-stone-800 mb-2 line-clamp-2 leading-tight group-hover:text-amber-600 transition-colors">
+                          <h4 className="text-lg font-bold text-stone-800 mb-2 line-clamp-2 leading-tight group-hover:text-blue-600 transition-colors">
                             {p.name}
                           </h4>
 

@@ -8,7 +8,7 @@ import { cartService, CartItem } from '@/lib/services/cartService';
 import { productService } from '@/lib/services/productService';
 import Swal from 'sweetalert2';
 
-const IMAGE_BASE_URL = 'https://jshope-backend-phs3.vercel.app';
+const IMAGE_BASE_URL = 'https://backend-online-marketplace.vercel.app';
 
 interface CartItemWithCheck extends CartItem {
     is_checked?: boolean;
@@ -208,7 +208,7 @@ export default function CartPage() {
           <div className="grid lg:grid-cols-12 gap-10">
             <div className="lg:col-span-8">
                 <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
-                    <div className="grid grid-cols-12 gap-4 bg-amber-400 p-4 text-sm font-semibold text-stone-900 items-center">
+                    <div className="grid grid-cols-12 gap-4 bg-blue-200 p-4 text-sm font-semibold text-stone-900 items-center">
                         <div className="col-span-1 text-center">
                         </div>
                         <div className="col-span-5 text-left">Product</div>
@@ -322,7 +322,7 @@ export default function CartPage() {
                          <div className="border-t border-dashed border-gray-200 my-4 pt-4">
                             <div className="flex justify-between text-base">
                                 <span className="font-bold text-gray-900">Total</span>
-                                <span className="font-bold text-amber-600 text-xl">{productService.formatPrice(cartTotal)}</span>
+                                <span className="font-bold text-blue-600 text-xl">{productService.formatPrice(cartTotal)}</span>
                             </div>
                         </div>
                     </div>

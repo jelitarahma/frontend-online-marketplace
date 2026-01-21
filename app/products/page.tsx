@@ -193,7 +193,7 @@ function ProductsContent() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50/30 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50/30 to-white">
       <div>
         <div className="container-custom pt-5 mb-3">
           <h1 className="text-3xl md:text-4xl font-bold text-center mb-3">
@@ -211,7 +211,7 @@ function ProductsContent() {
               />
               <button
                 type="submit"
-                className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 text-stone-400 hover:text-amber-500 transition-colors"
+                className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 text-stone-400 hover:text-blue-500 transition-colors"
                 onClick={handleSearch}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -249,7 +249,7 @@ function ProductsContent() {
                   onClick={() => handleCategoryChange('')}
                   className={`
                     w-full text-left px-2 mb-1 rounded-xl text-sm font-medium transition-colors
-                    ${!selectedCategory ? 'bg-amber-100 text-amber-700' : 'text-stone-600 hover:bg-stone-50'}
+                    ${!selectedCategory ? 'bg-blue-100 text-blue-700' : 'text-stone-600 hover:bg-stone-50'}
                   `}
                 >
                   All Products
@@ -260,7 +260,7 @@ function ProductsContent() {
                     onClick={() => handleCategoryChange(category._id)}
                     className={`
                       w-full text-left px-2 mb-1 rounded-xl text-sm font-medium transition-colors
-                      ${selectedCategory === category._id ? 'bg-amber-100 text-amber-700' : 'text-stone-600 hover:bg-stone-50'}
+                      ${selectedCategory === category._id ? 'bg-blue-100 text-blue-700' : 'text-stone-600 hover:bg-stone-50'}
                     `}
                   >
                     {category.name}
@@ -276,19 +276,19 @@ function ProductsContent() {
                   placeholder="Min"
                   value={priceRange.min}
                   onChange={(e) => setPriceRange({ ...priceRange, min: e.target.value })}
-                  className="w-full px-3 py-2 border border-stone-200 rounded-lg text-sm focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 border border-stone-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
                 />
                 <input
                   type="number"
                   placeholder="Max"
                   value={priceRange.max}
                   onChange={(e) => setPriceRange({ ...priceRange, max: e.target.value })}
-                  className="w-full px-3 py-2 border border-stone-200 rounded-lg text-sm focus:outline-none focus:border-amber-400"
+                  className="w-full px-3 py-2 border border-stone-200 rounded-lg text-sm focus:outline-none focus:border-blue-400"
                 />
               </div>
               <button
                 onClick={handlePriceFilter}
-                className="w-full py-2 bg-amber-500 text-white font-medium rounded hover:bg-amber-600 transition-colors text-sm"
+                className="w-full py-2 bg-blue-500 text-white font-medium rounded hover:bg-blue-600 transition-colors text-sm"
               >
                 Apply Filter
               </button>
@@ -335,7 +335,7 @@ function ProductsContent() {
                 <p className="text-stone-500 mb-6">Try adjusting your search or filter criteria</p>
                 <button
                   onClick={clearFilters}
-                  className="px-6 py-3 bg-amber-500 text-white font-medium rounded-xl hover:bg-amber-600 transition-colors"
+                  className="px-6 py-3 bg-blue-500 text-white font-medium rounded-xl hover:bg-blue-600 transition-colors"
                 >
                   Clear Filters
                 </button>
@@ -360,7 +360,7 @@ function ProductsContent() {
                     className={`
                       w-10 h-10 rounded-xl font-medium transition-colors
                       ${currentPage === i + 1
-                        ? 'bg-amber-500 text-white'
+                        ? 'bg-blue-500 text-white'
                         : 'border border-stone-200 hover:bg-stone-50'
                       }
                     `}

@@ -54,9 +54,9 @@ export default function SafeImage({
       return imageSrc;
     }
     // If it's a relative path, prepend the API base URL
-    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://jshope-backend-phs3.vercel.app/jshope';
-    // Remove /api/jshope from base URL to get the server root
-    const serverRoot = baseUrl.replace(/\/api\/jshope\/?$/, '');
+    const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://backend-online-marketplace.vercel.app';
+    // Remove trailing /api if present to get the server root
+    const serverRoot = baseUrl.replace(/\/api\/?$/, '');
     return `${serverRoot}${imageSrc.startsWith('/') ? '' : '/'}${imageSrc}`;
   };
 

@@ -8,11 +8,11 @@ import SafeImage from '@/app/components/common/SafeImage';
 import Swal from 'sweetalert2';
 
 const COLORS = {
-  primary: '#1B5E20',
-  primaryLight: '#2E7D32',
-  accent: '#F9A825',
-  greenBg: '#E8F5E9',
-  greenBorder: '#C8E6C9',
+  primary: '#3b82f6',
+  primaryLight: '#60a5fa',
+  accent: '#1e40af',
+  blueBg: '#eff6ff',
+  blueBorder: '#dbeafe',
 };
 
 interface FormVariant {
@@ -375,7 +375,7 @@ export default function EditProductPage() {
         borderRadius: '16px',
         padding: '24px',
         marginBottom: '24px',
-        border: `1px solid ${COLORS.greenBorder}`,
+        border: `1px solid ${COLORS.blueBorder}`,
         boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
       }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -427,7 +427,7 @@ export default function EditProductPage() {
         backgroundColor: 'white',
         borderRadius: '16px',
         padding: '32px',
-        border: `1px solid ${COLORS.greenBorder}`,
+        border: `1px solid ${COLORS.blueBorder}`,
         boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
         marginBottom: '24px',
       }}>
@@ -1127,7 +1127,7 @@ export default function EditProductPage() {
                               style={{
                                 fontSize: '11px',
                                 padding: '4px 8px',
-                                backgroundColor: COLORS.greenBg,
+                                backgroundColor: COLORS.blueBg,
                                 color: COLORS.primary,
                                 borderRadius: '4px',
                                 fontWeight: '600',

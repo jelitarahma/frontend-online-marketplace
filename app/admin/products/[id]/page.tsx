@@ -7,14 +7,14 @@ import { productService, Product } from '@/lib/services/productService';
 import SafeImage from '@/app/components/common/SafeImage';
 import Swal from 'sweetalert2';
 
-const baseURL = 'https://jshope-backend-phs3.vercel.app';
+const baseURL = 'https://backend-online-marketplace.vercel.app';
 
 const COLORS = {
-  primary: '#1B5E20',
-  primaryLight: '#2E7D32',
-  accent: '#F9A825',
-  greenBg: '#E8F5E9',
-  greenBorder: '#C8E6C9',
+  primary: '#3b82f6',
+  primaryLight: '#60a5fa',
+  accent: '#1e40af',
+  blueBg: '#eff6ff',
+  blueBorder: '#dbeafe',
 };
 
 export default function ProductDetailPage() {
@@ -244,7 +244,7 @@ export default function ProductDetailPage() {
             backgroundColor: 'white',
             borderRadius: '16px',
             padding: '24px',
-            border: `1px solid ${COLORS.greenBorder}`,
+            border: `1px solid ${COLORS.blueBorder}`,
             boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
             marginBottom: '16px',
           }}>
@@ -271,7 +271,7 @@ export default function ProductDetailPage() {
               backgroundColor: 'white',
               borderRadius: '16px',
               padding: '16px',
-              border: `1px solid ${COLORS.greenBorder}`,
+              border: `1px solid ${COLORS.blueBorder}`,
               boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
             }}>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(80px, 1fr))', gap: '12px' }}>
@@ -309,7 +309,7 @@ export default function ProductDetailPage() {
             backgroundColor: 'white',
             borderRadius: '16px',
             padding: '24px',
-            border: `1px solid ${COLORS.greenBorder}`,
+            border: `1px solid ${COLORS.blueBorder}`,
             boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
           }}>
             <h2 style={{ fontSize: '24px', fontWeight: 'bold', color: '#1f2937', marginBottom: '16px' }}>
@@ -351,7 +351,7 @@ export default function ProductDetailPage() {
                   fontSize: '13px',
                   fontWeight: '600',
                   borderRadius: '9999px',
-                  backgroundColor: COLORS.greenBg,
+                  backgroundColor: COLORS.blueBg,
                   color: COLORS.primary,
                 }}>
                   Active
@@ -366,7 +366,7 @@ export default function ProductDetailPage() {
               backgroundColor: 'white',
               borderRadius: '16px',
               padding: '24px',
-              border: `1px solid ${COLORS.greenBorder}`,
+              border: `1px solid ${COLORS.blueBorder}`,
               boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
             }}>
               <h3 style={{ fontSize: '16px', fontWeight: '700', color: '#1f2937', marginBottom: '12px' }}>
@@ -385,7 +385,7 @@ export default function ProductDetailPage() {
         backgroundColor: 'white',
         borderRadius: '16px',
         padding: '24px',
-        border: `1px solid ${COLORS.greenBorder}`,
+        border: `1px solid ${COLORS.blueBorder}`,
         boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
       }}>
         <h2 style={{ fontSize: '20px', fontWeight: 'bold', color: '#1f2937', marginBottom: '20px' }}>
@@ -395,7 +395,7 @@ export default function ProductDetailPage() {
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
-              <tr style={{ backgroundColor: COLORS.greenBg }}>
+              <tr style={{ backgroundColor: COLORS.blueBg }}>
                 <th style={{ padding: '12px 16px', textAlign: 'left', fontSize: '13px', fontWeight: '600', color: '#374151' }}>SKU</th>
                 <th style={{ padding: '12px 16px', textAlign: 'left', fontSize: '13px', fontWeight: '600', color: '#374151' }}>Image</th>
                 <th style={{ padding: '12px 16px', textAlign: 'left', fontSize: '13px', fontWeight: '600', color: '#374151' }}>Attributes</th>
@@ -488,7 +488,7 @@ export default function ProductDetailPage() {
                         fontSize: '11px',
                         fontWeight: '600',
                         borderRadius: '9999px',
-                        backgroundColor: variant.is_active ? COLORS.greenBg : '#f3f4f6',
+                        backgroundColor: variant.is_active ? COLORS.blueBg : '#f3f4f6',
                         color: variant.is_active ? COLORS.primary : '#6b7280',
                       }}>
                         {variant.is_active ? 'Active' : 'Inactive'}

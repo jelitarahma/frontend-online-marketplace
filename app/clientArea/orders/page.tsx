@@ -135,7 +135,7 @@ export default function OrdersPage() {
                     </div>
                     <h3 className="text-lg font-medium text-gray-900">No orders found</h3>
                     <p className="text-gray-500 mb-6">Looks like you haven't placed any orders yet in this category.</p>
-                    <Link href="/products" className="text-amber-600 font-medium hover:underline">Start Shopping</Link>
+                    <Link href="/products" className="text-blue-600 font-medium hover:underline">Start Shopping</Link>
                 </div>
             ) : (
                 filteredOrders.map((order) => (
@@ -145,7 +145,7 @@ export default function OrdersPage() {
                                 <div>
                                     <div className="flex items-center gap-3 mb-1">
                                         <span className="font-bold text-gray-900 text-lg">Order #{order.order_number}</span>
-                                        <span className={`px-2.5 py-0.5 rounded-full text-xs font-bold uppercase ${orderService.getStatusColor(order.status)}`}>
+                                        <span className={`px-2 py-1 rounded-full text-xs font-bold uppercase ${orderService.getStatusColor(order.status)}`}>
                                             {order.status}
                                         </span>
                                     </div>
@@ -157,7 +157,7 @@ export default function OrdersPage() {
                                 </div>
                                 <div className="text-right">
                                     <p className="text-sm text-gray-500">Total Amount</p>
-                                    <p className="text-xl font-bold text-amber-600">{productService.formatPrice(order.total_amount)}</p>
+                                    <p className="text-xl font-bold text-blue-600">{productService.formatPrice(order.total_amount)}</p>
                                 </div>
                             </div>
 
@@ -171,7 +171,7 @@ export default function OrdersPage() {
                                     {order.payment_status === 'unpaid' && order.payment_method !== 'cod' && order.status !== 'cancelled' && (
                                         <button 
                                             onClick={() => handlePay(order)}
-                                            className="flex-1 sm:flex-none px-4 py-2 bg-amber-500 text-white font-medium rounded-lg hover:bg-amber-600 transition-colors"
+                                            className="flex-1 sm:flex-none px-4 py-2 bg-blue-500 text-white font-medium rounded-lg hover:bg-blue-600 transition-colors"
                                         >
                                             Pay Now
                                         </button>

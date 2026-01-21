@@ -4,13 +4,12 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { categoryService, Category } from '@/lib/services/categoryService';
-import brandBnW from "@/app/assets/images/brand-bnw.png";
 
 const COLORS = {
-  primary: '#1B5E20',
-  primaryLight: '#2E7D32',
-  greenBg: '#E8F5E9',
-  cream: '#FAFAF5',
+  primary: '#3B82F6',
+  primaryLight: '#60A5FA',
+  blueBg: '#EFF6FF',
+  cream: '#F8FAFC',
 };
 
 export default function CustomerHeader() {
@@ -56,7 +55,7 @@ export default function CustomerHeader() {
 
   return (
     <>
-      <div style={{ backgroundColor: '#1b5e20' }} className="py-3">
+      <div style={{ backgroundColor: '#0f172a' }} className="py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-2 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-white text-sm">
             <p className="text-center sm:text-left flex items-center mb-0">
@@ -72,11 +71,11 @@ export default function CustomerHeader() {
             <div className="flex items-center gap-6">
               <Link href="/" className="flex items-center">
                 <Image
-                  src={brandBnW}
+                  src="/assets/online-ecommerce-logo.png"
                   alt="Brand"
-                  width={120}
-                  height={40}
-                  style={{ objectFit: 'contain' }}
+                  width={60}
+                  height={60}
+                  className="object-contain"
                   priority
                 />
               </Link>
@@ -84,7 +83,7 @@ export default function CustomerHeader() {
               <div className="relative">
                 <button
                   onClick={() => setShowCategoryMenu(!showCategoryMenu)}
-                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all hover:bg-green-50"
+                  className="flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg transition-all hover:bg-blue-50"
                   style={{ color: COLORS.primary }}
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -104,7 +103,7 @@ export default function CustomerHeader() {
                           <Link
                             key={category._id}
                             href={`/products?category=${category._id}`}
-                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-green-50 transition-colors border-b border-gray-100 last:border-b-0"
+                            className="block px-4 py-3 text-sm text-gray-700 hover:bg-blue-50 transition-colors border-b border-gray-100 last:border-b-0"
                             onClick={() => setShowCategoryMenu(false)}
                             style={{ 
                               backgroundColor: index % 2 === 0 ? '#ffffff' : '#fafafa'
@@ -130,7 +129,7 @@ export default function CustomerHeader() {
                 <>
                   <Link
                     href="/cart"
-                    className="relative p-2 rounded-full transition-colors hover:bg-green-50 text-gray-700"
+                    className="relative p-2 rounded-full transition-colors hover:bg-blue-50 text-gray-700"
                     title="Cart"
                   >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -141,9 +140,9 @@ export default function CustomerHeader() {
                   <div className="relative">
                     <button
                         onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
-                        className="flex items-center gap-2 hover:bg-green-50 py-1 px-2 rounded-lg transition-colors focus:outline-none"
+                        className="flex items-center gap-2 hover:bg-blue-50 py-1 px-2 rounded-lg transition-colors focus:outline-none"
                     >
-                        <div className="w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-700">
+                        <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-700">
                              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                             </svg>
@@ -165,7 +164,7 @@ export default function CustomerHeader() {
                             
                             <Link 
                                 href="/clientArea/orders" 
-                                className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-green-50 hover:text-green-700 transition-colors mx-1 rounded-lg"
+                                className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-700 transition-colors mx-1 rounded-lg"
                                 onClick={() => setIsUserMenuOpen(false)}
                             >
                                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" /></svg>

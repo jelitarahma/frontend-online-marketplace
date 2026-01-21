@@ -109,8 +109,8 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
   let bannerDesc = `Your order is currently ${order.status}.`;
 
   if (isPaid || order.status === 'delivered') {
-      bannerColor = 'bg-green-50 border-green-100 text-green-800';
-      bannerIcon = <svg className="w-6 h-6 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>;
+      bannerColor = 'bg-blue-50 border-blue-100 text-blue-800';
+      bannerIcon = <svg className="w-6 h-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>;
       bannerTitle = order.status === 'delivered' ? 'Order Delivered' : 'Payment Confirmed';
       bannerDesc = order.status === 'delivered' ? 'Your package has been delivered successfully.' : 'We have received your payment. Your order will be processed shortly.';
   } else if (isCancelled) {
@@ -192,8 +192,8 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
                         <div>
                              <p className="text-[10px] uppercase tracking-wider font-bold text-gray-400 mb-2">PAYMENT</p>
                              <p className="font-bold text-stone-900 text-sm capitalize">{order.payment_method === 'midtrans' ? 'Online Payment' : order.payment_method}</p>
-                             <p className={`text-xs font-bold capitalize mt-1 inline-flex items-center gap-1 ${isPaid ? 'text-green-600' : 'text-amber-600'}`}>
-                                 <span className={`w-1.5 h-1.5 rounded-full ${isPaid ? 'bg-green-600' : 'bg-amber-600'}`} />
+                             <p className={`text-xs font-bold capitalize mt-1 inline-flex items-center gap-1 ${isPaid ? 'text-blue-600' : 'text-amber-600'}`}>
+                                 <span className={`w-1.5 h-1.5 rounded-full ${isPaid ? 'bg-blue-600' : 'bg-amber-600'}`} />
                                  {order.payment_status}
                              </p>
                         </div>
@@ -270,14 +270,14 @@ export default function OrderDetailPage({ params }: { params: Promise<{ id: stri
 
                     <div className="mt-6 pt-4 border-t border-dashed border-gray-200">
                         <div className="flex justify-between items-end mb-6">
-                            <span className="font-bold text-green-600 text-lg">Total Price</span>
-                            <span className="font-bold text-2xl text-green-600">{productService.formatPrice(order.total_amount)}</span>
+                            <span className="font-bold text-blue-600 text-lg">Total Price</span>
+                            <span className="font-bold text-2xl text-blue-600">{productService.formatPrice(order.total_amount)}</span>
                         </div>
                         
                         {isUnpaid && order.snap_token ? (
                              <button 
                                 onClick={handlePay}
-                                className="w-full py-2 bg-green-500 hover:bg-green-600 text-white font-bold rounded-xl shadow-lg shadow-green-200 transition-all transform active:scale-95 rounded mt-2"
+                                className="w-full py-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-xl shadow-lg shadow-blue-200 transition-all transform active:scale-95 rounded mt-2"
                              >
                                  Pay Now
                              </button>

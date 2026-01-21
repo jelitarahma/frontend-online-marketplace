@@ -83,7 +83,7 @@ function AuthContent() {
       <div className="w-full lg:w-[40%] p-3 lg:p-4 bg-white h-full hidden lg:block">
         <div className="w-full h-full rounded-3xl overflow-hidden relative">
              <img 
-                src="https://i.pinimg.com/736x/61/0e/fe/610efe08df6df834292f0f70d343aa56.jpg" 
+                src="https://i.pinimg.com/736x/ab/85/5f/ab855fdddb9b1d3dee5e9d555ec5fce6.jpg" 
                 alt="Auth Banner" 
                 className="w-full h-full object-cover object-bottom"
              />
@@ -100,7 +100,7 @@ function AuthContent() {
 
       <div className="lg:hidden w-full h-48 relative overflow-hidden flex-shrink-0">
           <img 
-            src="https://i.pinimg.com/736x/61/0e/fe/610efe08df6df834292f0f70d343aa56.jpg" 
+            src="https://i.pinimg.com/736x/ab/85/5f/ab855fdddb9b1d3dee5e9d555ec5fce6.jpg" 
              alt="Mobile Banner" 
              className="w-full h-full object-cover object-bottom"
           />

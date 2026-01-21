@@ -39,7 +39,7 @@ export default function CheckoutPage() {
         icon: 'info',
         title: 'Login Required',
         text: 'Please login to checkout.',
-        confirmButtonColor: '#f59e0b',
+        confirmButtonColor: '#0f172a',
       }).then(() => router.push('/auth?mode=login'));
       return;
     }
@@ -113,7 +113,7 @@ export default function CheckoutPage() {
               icon: 'success',
               title: 'Payment Successful!',
               text: 'Your order has been placed successfully.',
-              confirmButtonColor: '#f59e0b',
+              confirmButtonColor: '#0f172a',
             }).then(() => router.push('/clientArea/orders'));
           },
           () => {
@@ -121,7 +121,7 @@ export default function CheckoutPage() {
               icon: 'info',
               title: 'Payment Pending',
               text: 'Please complete your payment.',
-              confirmButtonColor: '#f59e0b',
+              confirmButtonColor: '#0f172a',
             }).then(() => router.push('/clientArea/orders'));
           },
           () => {
@@ -144,7 +144,7 @@ export default function CheckoutPage() {
           icon: 'success',
           title: 'Order Placed!',
           text: 'Your COD order has been placed successfully.',
-          confirmButtonColor: '#f59e0b',
+          confirmButtonColor: '#0f172a',
         }).then(() => router.push('/clientArea/orders'));
       }
     } catch (error) {
@@ -163,7 +163,7 @@ export default function CheckoutPage() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-amber-50/30 to-white py-8">
+      <div className="min-h-screen bg-gradient-to-b from-blue-50/30 to-white py-8">
         <div className="container-custom">
           <div className="h-8 skeleton w-48 mb-8" />
           <div className="grid lg:grid-cols-3 gap-8">
@@ -179,7 +179,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-amber-50/30 to-white">
+    <div className="min-h-screen bg-gradient-to-b from-blue-50/30 to-white">
       <div className="bg-white border-b border-stone-100">
         <div className="container-custom pb-2 pt-4">
           <h1 className="text-2xl md:text-3xl font-bold text-stone-800">Checkout</h1>
@@ -191,7 +191,7 @@ export default function CheckoutPage() {
           <div className="lg:col-span-2 space-y-6">
             <div className="bg-white rounded-2xl py-3">
               <h4 className="text-lg font-bold text-stone-800 mb-4 flex items-center gap-2">
-                <svg className="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
@@ -201,12 +201,12 @@ export default function CheckoutPage() {
                 value={shippingAddress}
                 onChange={(e) => setShippingAddress(e.target.value)}
                 placeholder="Enter your complete shipping address..."
-                className="w-full px-4 py-3 border-2 border-stone-200 rounded-xl focus:outline-none focus:border-amber-400 resize-none h-24"
+                className="w-full px-4 py-3 border-2 border-stone-200 rounded-xl focus:outline-none focus:border-blue-400 resize-none h-24"
               />
             </div>
             <div className="bg-white rounded-2xl py-3">
               <h4 className="text-lg font-bold text-stone-800 mb-4 flex items-center gap-2">
-                <svg className="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
                 </svg>
@@ -219,8 +219,8 @@ export default function CheckoutPage() {
                     className={`
                       flex items-center justify-between p-4 mb-2 rounded-xl border-2 cursor-pointer transition-all
                       ${selectedShipping.id === option.id
-                        ? 'border-amber-500 bg-amber-50'
-                        : 'border-stone-200 hover:border-amber-300'
+                        ? 'border-blue-500 bg-blue-50'
+                        : 'border-stone-200 hover:border-blue-300'
                       }
                     `}
                     style={{
@@ -231,11 +231,11 @@ export default function CheckoutPage() {
                       <div
                         className={`
                           w-5 h-5 rounded-full border-2 flex items-center justify-center
-                          ${selectedShipping.id === option.id ? 'border-amber-500' : 'border-stone-300'}
+                          ${selectedShipping.id === option.id ? 'border-blue-500' : 'border-stone-300'}
                         `}
                       >
                         {selectedShipping.id === option.id && (
-                          <div className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                          <div className="w-2.5 h-2.5 rounded-full bg-blue-500" />
                         )}
                       </div>
                       <div>
@@ -243,7 +243,7 @@ export default function CheckoutPage() {
                         <span className="text-sm text-stone-500 ml-2">({option.duration})</span>
                       </div>
                     </div>
-                    <span className="font-semibold text-amber-600">
+                    <span className="font-semibold text-blue-600">
                       {productService.formatPrice(option.cost)}
                     </span>
                     <input
@@ -260,7 +260,7 @@ export default function CheckoutPage() {
             </div>
             <div className="bg-white rounded-2xl py-3">
               <h4 className="text-lg font-bold text-stone-800 mb-4 flex items-center gap-2">
-                <svg className="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                 </svg>
                 Payment Method
@@ -272,8 +272,8 @@ export default function CheckoutPage() {
                     className={`
                       flex items-center gap-3 p-4 rounded-xl border-2 cursor-pointer transition-all
                       ${selectedPayment.id === method.id
-                        ? 'border-amber-500 bg-amber-50'
-                        : 'border-stone-200 hover:border-amber-300'
+                        ? 'border-blue-500 bg-blue-50'
+                        : 'border-stone-200 hover:border-blue-300'
                       }
                     `}
                     style={{
@@ -283,11 +283,11 @@ export default function CheckoutPage() {
                     <div
                       className={`
                         w-5 h-5 rounded-full border-2 flex items-center justify-center
-                        ${selectedPayment.id === method.id ? 'border-amber-500' : 'border-stone-300'}
+                        ${selectedPayment.id === method.id ? 'border-blue-500' : 'border-stone-300'}
                       `}
                     >
                       {selectedPayment.id === method.id && (
-                        <div className="w-2.5 h-2.5 rounded-full bg-amber-500" />
+                        <div className="w-2.5 h-2.5 rounded-full bg-blue-500" />
                       )}
                     </div>
                     <div>
@@ -312,7 +312,7 @@ export default function CheckoutPage() {
                 value={note}
                 onChange={(e) => setNote(e.target.value)}
                 placeholder="Any special instructions for your order..."
-                className="w-full px-4 py-3 border-2 border-stone-200 rounded-xl focus:outline-none focus:border-amber-400 resize-none h-20"
+                className="w-full px-4 py-3 border-2 border-stone-200 rounded-xl focus:outline-none focus:border-blue-400 resize-none h-20"
               />
             </div>
           </div>
@@ -332,7 +332,7 @@ export default function CheckoutPage() {
                         
                         // Handle relative paths
                         if (!imgUrl.startsWith('http')) {
-                            const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://jshope-backend-phs3.vercel.app';
+                            const baseUrl = process.env.NEXT_PUBLIC_API_URL || 'https://backend-online-marketplace.vercel.app';
                             imgUrl = `${baseUrl}${imgUrl.startsWith('/') ? '' : '/'}${imgUrl}`;
                         }
 
@@ -361,7 +361,7 @@ export default function CheckoutPage() {
                       <p className="text-xs mb-0 text-stone-500">
                         {item.variant_name} x {item.quantity}
                       </p>
-                      <p className="text-sm mb-0 font-semibold text-amber-600">
+                      <p className="text-sm mb-0 font-semibold text-blue-600">
                         {productService.formatPrice(item.subtotal)}
                       </p>
                     </div>
@@ -383,7 +383,7 @@ export default function CheckoutPage() {
               <div className="border-t border-stone-100 pt-4 mt-4 mb-6">
                 <div className="flex justify-between">
                   <span className="text-lg font-bold text-stone-800">Total</span>
-                  <span className="text-xl font-bold text-amber-600">
+                  <span className="text-xl font-bold text-blue-600">
                     {productService.formatPrice(total)}
                   </span>
                 </div>
@@ -392,7 +392,7 @@ export default function CheckoutPage() {
               <button
                 onClick={handleCheckout}
                 disabled={isProcessing}
-                className="w-full py-2 mt-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white font-semibold rounded-xl hover:from-amber-600 hover:to-orange-600 transition-all shadow-lg shadow-amber-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 rounded"
+                className="w-full py-2 mt-2 bg-gradient-to-r from-blue-500 to-[#0f172a] text-white font-semibold rounded-xl hover:from-blue-600 hover:to-[#0f172a] transition-all shadow-lg shadow-blue-200 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2 rounded"
               >
                 {isProcessing ? (
                   <>

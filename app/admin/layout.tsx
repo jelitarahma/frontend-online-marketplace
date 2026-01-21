@@ -27,9 +27,9 @@ export default function AdminLayout({
 
   if (!isAuthorized) {
     return (
-      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#FAFAF5' }}>
+      <div className="min-h-screen flex items-center justify-center" style={{ backgroundColor: '#f8fafc' }}>
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-t-transparent rounded-full animate-spin mx-auto mb-4" style={{ borderColor: '#4CAF50', borderTopColor: 'transparent' }} />
+          <div className="w-12 h-12 border-4 border-t-transparent rounded-full animate-spin mx-auto mb-4" style={{ borderColor: '#3b82f6', borderTopColor: 'transparent' }} />
           <p className="text-gray-600 text-base">Loading...</p>
         </div>
       </div>
@@ -37,9 +37,9 @@ export default function AdminLayout({
   }
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#FAFAF5' }}>
+    <div className="min-h-screen" style={{ backgroundColor: '#f8fafc' }}>
       <AdminSidebar />
-      <main style={{ marginLeft: '80px', minHeight: '100vh', padding: '40px 48px', backgroundColor: '#eafff3ff'}}>
+      <main style={{ marginLeft: '80px', minHeight: '100vh', padding: '40px 48px', backgroundColor: '#f1f5f9'}}>
         <div className="max-w-6xl mx-auto">
           {children}
         </div>

@@ -7,19 +7,14 @@ export default function Footer() {
   const linkStyle = { textDecoration: 'none' };
 
   return (
-    <footer style={{ backgroundColor: '#114a26ff', color: 'white', padding: '48px 0 0 0' }}>
+    <footer style={{ backgroundColor: '#0f172a', color: 'white', padding: '48px 0 0 0' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px 48px 48px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '48px' }}>
           <div>
-            <Link href="/" style={{ ...linkStyle, display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
-              <div style={{ width: '48px', height: '48px', background: 'linear-gradient(135deg, #ffffffff, #ffffffff)', borderRadius: '12px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ color: '#000000', fontWeight: 'bold', fontSize: '18px' }}>JS</span>
-              </div>
-              <div>
-                <span style={{ fontSize: '18px', fontWeight: 'bold',color: '#ffffffff', display: 'block' }}>JShope</span>
-                <span style={{ fontSize: '12px', color: '#ffffffff', marginTop: '-4px', display: 'block' }}>by Jelita Rahma</span>
-              </div>
+            <Link href="/" style={{ ...linkStyle, display: 'flex', alignItems: 'center', marginBottom: '16px' }}>
+              <span style={{ fontSize: '24px', fontWeight: 'bold', letterSpacing: '-0.5px', color: '#ffffffff' }}>Online Marketplace</span>
             </Link>
+            <span style={{ fontSize: '12px', color: '#ffffffff', marginTop: '-4px', display: 'block' }}>by Binus Learning</span>
             <p style={{ color: '#ffffffff', fontSize: '14px', lineHeight: '1.6', marginTop: '16px' }}>
               Your one-stop destination for quality products at unbeatable prices.
             </p>
@@ -57,8 +52,8 @@ export default function Footer() {
                 style={{ 
                   flex: 1, 
                   padding: '12px 16px', 
-                  backgroundColor: '#e1ffecff', 
-                  border: '1px solid #00270eff', 
+                  backgroundColor: '#f1f5f9', 
+                  border: '1px solid #1e293b', 
                   borderRadius: '8px', 
                   color: '#373737ff', 
                   fontSize: '14px',
@@ -69,7 +64,7 @@ export default function Footer() {
                 type="submit"
                 style={{ 
                   padding: '12px 16px', 
-                  backgroundColor: '#f59e0b', 
+                  backgroundColor: '#3b82f6', 
                   color: 'white', 
                   borderRadius: '8px', 
                   border: 'none',
@@ -88,7 +83,7 @@ export default function Footer() {
       <div style={{ borderTop: '1px solid #1f2937' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '20px 48px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <p style={{ color: 'white', fontSize: '14px', margin: 0 }}>
-            © {currentYear} JShope by Jelita Rahma. All rights reserved.
+            © {currentYear} Online Marketplace by Binus Learning. All rights reserved.
           </p>
           <div style={{ display: 'flex', alignItems: 'center', gap: '24px' }}>
             <a href="#" style={{ ...linkStyle, color: 'white', fontSize: '14px' }}>Privacy</a>

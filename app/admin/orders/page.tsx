@@ -7,13 +7,12 @@ import { productService } from '@/lib/services/productService';
 import Swal from 'sweetalert2';
 
 const COLORS = {
-  primary: '#1B5E20',
-  primaryLight: '#2E7D32',
-  accent: '#F9A825',
-  accentLight: '#FDD835',
-  lightGreen: '#E8F5E9',
-  lighterGreen: '#F1F8E9',
-  hoverGreen: '#C8E6C9',
+  primary: '#3b82f6',
+  primaryLight: '#60a5fa',
+  accent: '#1e40af',
+  blueBg: '#eff6ff',
+  blueLighterBg: '#f8fafc',
+  blueHoverBg: '#e2e8f0',
 };
 
 const statusOptions = ['pending', 'processing', 'shipped', 'delivered', 'cancelled'];
@@ -109,7 +108,7 @@ export default function AdminOrdersPage() {
       pending: { bg: '#FFF3E0', text: '#E65100' },
       processing: { bg: '#E3F2FD', text: '#1565C0' },
       shipped: { bg: '#F3E5F5', text: '#6A1B9A' },
-      delivered: { bg: '#E8F5E9', text: '#2E7D32' },
+      delivered: { bg: '#eff6ff', text: '#3b82f6' },
       cancelled: { bg: '#FFEBEE', text: '#C62828' },
     };
     const style = styles[status] || { bg: '#F5F5F5', text: '#616161' };
@@ -132,7 +131,7 @@ export default function AdminOrdersPage() {
   const getPaymentBadge = (status: string) => {
     const styles: Record<string, { bg: string; text: string }> = {
       unpaid: { bg: '#FFF3E0', text: '#E65100' },
-      paid: { bg: '#E8F5E9', text: '#2E7D32' },
+      paid: { bg: '#eff6ff', text: '#3b82f6' },
       failed: { bg: '#FFEBEE', text: '#C62828' },
       refunded: { bg: '#F5F5F5', text: '#616161' },
     };
@@ -376,12 +375,12 @@ export default function AdminOrdersPage() {
                   <tr
                     key={order._id}
                     style={{
-                      backgroundColor: index % 2 === 0 ? COLORS.lightGreen : COLORS.lighterGreen,
+                      backgroundColor: index % 2 === 0 ? COLORS.blueBg : COLORS.blueLighterBg,
                       cursor: 'pointer',
                       transition: 'background-color 0.2s',
                     }}
-                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.hoverGreen}
-                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = index % 2 === 0 ? COLORS.lightGreen : COLORS.lighterGreen}
+                    onMouseEnter={(e) => e.currentTarget.style.backgroundColor = COLORS.blueHoverBg}
+                    onMouseLeave={(e) => e.currentTarget.style.backgroundColor = index % 2 === 0 ? COLORS.blueBg : COLORS.blueLighterBg}
                     onClick={() => router.push(`/admin/orders/${order._id}`)}
                   >
                     <td style={{ padding: '16px' }}>

@@ -9,9 +9,9 @@ import Swal from 'sweetalert2';
 
 // Theme colors
 const COLORS = {
-  primary: '#1B5E20',
-  primaryLight: '#2E7D32',
-  accent: '#F9A825',
+  primary: '#3b82f6',
+  primaryLight: '#60a5fa',
+  accent: '#1e40af',
 };
 
 const statusOptions = ['pending', 'processing', 'shipped', 'delivered', 'cancelled'];
@@ -77,7 +77,7 @@ export default function OrderDetailPage() {
       pending: { bg: '#FFF3E0', text: '#E65100' },
       processing: { bg: '#E3F2FD', text: '#1565C0' },
       shipped: { bg: '#F3E5F5', text: '#6A1B9A' },
-      delivered: { bg: '#E8F5E9', text: '#2E7D32' },
+      delivered: { bg: '#eff6ff', text: '#3b82f6' },
       cancelled: { bg: '#FFEBEE', text: '#C62828' },
     };
     const style = styles[status] || { bg: '#F5F5F5', text: '#616161' };
@@ -100,7 +100,7 @@ export default function OrderDetailPage() {
   const getPaymentBadge = (status: string) => {
     const styles: Record<string, { bg: string; text: string }> = {
       unpaid: { bg: '#FFF3E0', text: '#E65100' },
-      paid: { bg: '#E8F5E9', text: '#2E7D32' },
+      paid: { bg: '#eff6ff', text: '#3b82f6' },
       failed: { bg: '#FFEBEE', text: '#C62828' },
       refunded: { bg: '#F5F5F5', text: '#616161' },
     };
@@ -300,7 +300,7 @@ export default function OrderDetailPage() {
                     flexShrink: 0,
                   }}>
                     <img
-                      src={`https://jshope-backend-phs3.vercel.app${item.variant_id?.product_id?.thumbnail || item.thumbnail}`}
+                      src={`https://backend-online-marketplace.vercel.app${item.variant_id?.product_id?.thumbnail || item.thumbnail}`}
                       alt={item.product_name}
                       style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                       onError={(e) => {

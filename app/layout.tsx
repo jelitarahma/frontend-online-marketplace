@@ -5,9 +5,9 @@ import './globals.css';
 import ClientLayoutWrapper from './components/ClientLayoutWrapper';
 
 export const metadata = {
-  title: 'JShope by Jelita Rahma - Online Store',
-  description: 'Your one-stop destination for quality products at unbeatable prices. Shop now at JShope!',
-  keywords: 'online store, ecommerce, shopping, products, JShope',
+  title: 'Online Marketplace by Binus Learning - Online Store',
+  description: 'Your one-stop destination for quality products at unbeatable prices. Shop now at Online Marketplace!',
+  keywords: 'online store, ecommerce, shopping, products, Online Marketplace',
 };
 
 import Script from 'next/script';

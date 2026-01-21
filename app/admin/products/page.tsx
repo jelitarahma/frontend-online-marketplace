@@ -8,11 +8,11 @@ import SafeImage from '@/app/components/common/SafeImage';
 import Swal from 'sweetalert2';
 
 const COLORS = {
-  primary: '#1B5E20',
-  primaryLight: '#2E7D32',
-  accent: '#F9A825',
-  greenBg: '#E8F5E9',
-  greenBorder: '#C8E6C9',
+  primary: '#3b82f6',
+  primaryLight: '#60a5fa',
+  accent: '#1e40af',
+  blueBg: '#eff6ff',
+  blueBorder: '#dbeafe',
 };
 
 export default function AdminProductsPage() {
@@ -113,7 +113,7 @@ export default function AdminProductsPage() {
               borderRadius: '12px',
               border: 'none',
               cursor: 'pointer',
-              boxShadow: '0 4px 6px rgba(27, 94, 32, 0.3)',
+              boxShadow: '0 4px 6px rgba(59, 130, 246, 0.3)',
             }}
           >
             <svg style={{ width: '20px', height: '20px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -129,7 +129,7 @@ export default function AdminProductsPage() {
         borderRadius: '16px', 
         padding: '20px', 
         marginBottom: '24px',
-        border: `1px solid ${COLORS.greenBorder}`,
+        border: `1px solid ${COLORS.blueBorder}`,
         boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
       }}>
         <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', alignItems: 'center' }}>
@@ -191,13 +191,13 @@ export default function AdminProductsPage() {
         backgroundColor: 'white', 
         borderRadius: '16px', 
         overflow: 'hidden',
-        border: `1px solid ${COLORS.greenBorder}`,
+        border: `1px solid ${COLORS.blueBorder}`,
         boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
       }}>
         <div style={{ overflowX: 'auto' }}>
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
-              <tr style={{ backgroundColor: COLORS.greenBg }}>
+              <tr style={{ backgroundColor: COLORS.blueBg }}>
                 <th style={{ padding: '16px 20px', textAlign: 'left', fontSize: '14px', fontWeight: '600', color: '#374151' }}>Product</th>
                 <th style={{ padding: '16px 20px', textAlign: 'left', fontSize: '14px', fontWeight: '600', color: '#374151' }}>Price</th>
                 <th style={{ padding: '16px 20px', textAlign: 'center', fontSize: '14px', fontWeight: '600', color: '#374151' }}>Stock</th>
@@ -230,7 +230,7 @@ export default function AdminProductsPage() {
                 <tr>
                   <td colSpan={6} style={{ padding: '60px 20px', textAlign: 'center' }}>
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                      <div style={{ width: '80px', height: '80px', backgroundColor: COLORS.greenBg, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
+                      <div style={{ width: '80px', height: '80px', backgroundColor: COLORS.blueBg, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '16px' }}>
                         <svg style={{ width: '40px', height: '40px', color: COLORS.primary }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
                         </svg>
@@ -312,7 +312,7 @@ export default function AdminProductsPage() {
                         fontSize: '12px',
                         fontWeight: '600',
                         borderRadius: '9999px',
-                        backgroundColor: COLORS.greenBg,
+                        backgroundColor: COLORS.blueBg,
                         color: COLORS.primary,
                       }}>
                         Active
@@ -348,12 +348,12 @@ export default function AdminProductsPage() {
                           onClick={() => router.push(`/admin/products/${product._id}/edit`)}
                           style={{
                             padding: '8px 16px',
-                            backgroundColor: COLORS.greenBg,
+                            backgroundColor: COLORS.blueBg,
                             color: COLORS.primary,
                             fontSize: '13px',
                             fontWeight: '600',
                             borderRadius: '8px',
-                            border: `1px solid ${COLORS.greenBorder}`,
+                            border: `1px solid ${COLORS.blueBorder}`,
                             cursor: 'pointer',
                             display: 'inline-flex',
                             alignItems: 'center',

@@ -9,18 +9,19 @@ import {
 import dashboardService, { DashboardData } from '@/lib/services/dashboardService';
 
 const COLORS = {
-  primary: '#1B5E20',
-  primaryLight: '#2E7D32',
-  accent: '#F9A825',
-  greenBg: '#E8F5E9',
-  greenBorder: '#C8E6C9',
-  blue: '#2196F3',
-  purple: '#9C27B0',
-  orange: '#FF9800',
-  red: '#F44336',
+  primary: '#3b82f6',
+  primaryLight: '#60a5fa',
+  accent: '#1e40af',
+  blueBg: '#eff6ff',
+  blueBorder: '#dbeafe',
+  blue: '#3b82f6',
+  purple: '#8b5cf6',
+  teal: '#14b8a6',
+  red: '#ef4444',
+  indigo: '#6366f1'
 };
 
-const CHART_COLORS = ['#2196F3', '#4CAF50', '#FF9800', '#9C27B0', '#F44336'];
+const CHART_COLORS = ['#3b82f6', '#6366f1', '#8b5cf6', '#14b8a6', '#f43f5e'];
 
 export default function AdminDashboard() {
   const [data, setData] = useState<DashboardData | null>(null);
@@ -77,7 +78,7 @@ export default function AdminDashboard() {
           <div style={{ 
             width: '48px', 
             height: '48px', 
-            border: '4px solid #E8F5E9', 
+            border: '4px solid #f1f5f9', 
             borderTop: `4px solid ${COLORS.primary}`,
             borderRadius: '50%',
             animation: 'spin 1s linear infinite',
@@ -111,10 +112,10 @@ export default function AdminDashboard() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '20px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '16px' }}>
           <div style={{ 
-            background: '#bbf7d0',
+            background: '#dbeafe',
             borderRadius: '12px', 
             padding: '20px',
-            border: '1px solid #86efac'
+            border: '1px solid #bfdbfe'
           }}>
             <div style={{ marginBottom: '16px' }}>
               <div style={{ 
@@ -132,17 +133,17 @@ export default function AdminDashboard() {
                 </svg>
               </div>
             </div>
-            <p style={{ fontSize: '18px', color: '#166534', marginBottom: '8px', fontWeight: '600' }}>Total Sales</p>
-            <p style={{ fontSize: '28px', fontWeight: 'bold', color: '#166534', lineHeight: '1' }}>
+            <p style={{ fontSize: '18px', color: '#1e40af', marginBottom: '8px', fontWeight: '600' }}>Total Sales</p>
+            <p style={{ fontSize: '28px', fontWeight: 'bold', color: '#1e40af', lineHeight: '1' }}>
               {dashboardService.formatCurrency(data.summary.totalSales.current)}
             </p>
           </div>
 
           <div style={{ 
-            background: '#6cc18a',
+            background: '#bfdbfe',
             borderRadius: '12px', 
             padding: '20px',
-            border: '1px solid #4ade80'
+            border: '1px solid #93c5fd'
           }}>
             <div style={{ marginBottom: '16px' }}>
               <div style={{ 
@@ -160,17 +161,17 @@ export default function AdminDashboard() {
                 </svg>
               </div>
             </div>
-            <p style={{ fontSize: '18px', color: '#166534', marginBottom: '8px', fontWeight: '600' }}>Total Orders</p>
-            <p style={{ fontSize: '28px', fontWeight: 'bold', color: '#166534', lineHeight: '1' }}>
+            <p style={{ fontSize: '18px', color: '#1e40af', marginBottom: '8px', fontWeight: '600' }}>Total Orders</p>
+            <p style={{ fontSize: '28px', fontWeight: 'bold', color: '#1e40af', lineHeight: '1' }}>
               {data.summary.totalOrders.current}
             </p>
           </div>
 
           <div style={{ 
-            background: '#6cc18a',
+            background: '#bfdbfe',
             borderRadius: '12px', 
             padding: '20px',
-            border: '1px solid #4ade80'
+            border: '1px solid #93c5fd'
           }}>
             <div style={{ marginBottom: '16px' }}>
               <div style={{ 
@@ -187,17 +188,17 @@ export default function AdminDashboard() {
                 </svg>
               </div>
             </div>
-            <p style={{ fontSize: '18px', color: '#166534', marginBottom: '8px', fontWeight: '600' }}>Products Sold</p>
-            <p style={{ fontSize: '28px', fontWeight: 'bold', color: '#166534', lineHeight: '1' }}>
+            <p style={{ fontSize: '18px', color: '#1e40af', marginBottom: '8px', fontWeight: '600' }}>Products Sold</p>
+            <p style={{ fontSize: '28px', fontWeight: 'bold', color: '#1e40af', lineHeight: '1' }}>
               {data.summary.totalProductsSold.current}
             </p>
           </div>
 
           <div style={{ 
-            background: '#bbf7d0',
+            background: '#dbeafe',
             borderRadius: '12px', 
             padding: '20px',
-            border: '1px solid #86efac'
+            border: '1px solid #bfdbfe'
           }}>
             <div style={{ marginBottom: '16px' }}>
               <div style={{ 
@@ -214,8 +215,8 @@ export default function AdminDashboard() {
                 </svg>
               </div>
             </div>
-            <p style={{ fontSize: '18px', color: '#166534', marginBottom: '8px', fontWeight: '600' }}>Total Customers</p>
-            <p style={{ fontSize: '28px', fontWeight: 'bold', color: '#166534', lineHeight: '1' }}>
+            <p style={{ fontSize: '18px', color: '#1e40af', marginBottom: '8px', fontWeight: '600' }}>Total Customers</p>
+            <p style={{ fontSize: '28px', fontWeight: 'bold', color: '#1e40af', lineHeight: '1' }}>
               {data.summary.totalCustomers}
             </p>
           </div>
@@ -280,7 +281,7 @@ export default function AdminDashboard() {
                     fontSize: '11px', 
                     fontWeight: '600',
                     color: COLORS.primary,
-                    backgroundColor: COLORS.greenBg,
+                    backgroundColor: COLORS.blueBg,
                     padding: '2px 6px',
                     borderRadius: '4px'
                   }}>
@@ -353,7 +354,7 @@ export default function AdminDashboard() {
                 fontSize: '12px', 
                 fontWeight: '600', 
                 color: COLORS.primary, 
-                backgroundColor: COLORS.greenBg, 
+                backgroundColor: COLORS.blueBg, 
                 borderRadius: '6px' 
               }}
             >

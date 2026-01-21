@@ -163,7 +163,7 @@ export const productService = {
       return path;
     }
 
-    const baseUrl = 'https://jshope-backend-phs3.vercel.app'; 
+    const baseUrl = 'https://backend-online-marketplace.vercel.app'; 
     
 
     const cleanPath = path.startsWith('/') ? path : `/${path}`;

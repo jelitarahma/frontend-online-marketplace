@@ -5,10 +5,10 @@ import { categoryService, Category } from '@/lib/services/categoryService';
 import Swal from 'sweetalert2';
 
 const COLORS = {
-  primary: '#1B5E20',
-  primaryLight: '#2E7D32',
-  accent: '#F9A825',
-  accentLight: '#FDD835',
+  primary: '#3b82f6',
+  primaryLight: '#60a5fa',
+  accent: '#1e40af',
+  blueBg: '#eff6ff',
 };
 
 const getCategoryIcon = (categoryName: string) => {
@@ -88,8 +88,8 @@ const getCategoryIcon = (categoryName: string) => {
   
   return {
     icon: <span style={{ fontSize: '48px' }}>📦</span>,
-    bgColor: '#E8F5E9',
-    borderColor: '#C8E6C9',
+    bgColor: '#eff6ff',
+    borderColor: '#dbeafe',
   };
 };
 
@@ -388,7 +388,7 @@ export default function AdminCategoriesPage() {
               borderRadius: '10px',
               cursor: 'pointer',
               transition: 'background-color 0.2s, transform 0.1s',
-              boxShadow: '0 2px 4px rgba(27, 94, 32, 0.2)',
+              boxShadow: '0 2px 4px rgba(59, 130, 246, 0.2)',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.backgroundColor = COLORS.primaryLight;
@@ -470,10 +470,10 @@ export default function AdminCategoriesPage() {
                 margin: '0 auto 20px',
               }}>
                 <svg viewBox="0 0 24 24" style={{ width: '40px', height: '40px' }}>
-                  <rect x="3" y="3" width="7" height="7" rx="1.5" fill="#C8E6C9" stroke="#4CAF50" strokeWidth="1.5"/>
-                  <rect x="14" y="3" width="7" height="7" rx="1.5" fill="#FFF9C4" stroke="#FDD835" strokeWidth="1.5"/>
-                  <rect x="3" y="14" width="7" height="7" rx="1.5" fill="#FFF9C4" stroke="#FDD835" strokeWidth="1.5"/>
-                  <rect x="14" y="14" width="7" height="7" rx="1.5" fill="#C8E6C9" stroke="#4CAF50" strokeWidth="1.5"/>
+                  <rect x="3" y="3" width="7" height="7" rx="1.5" fill="#dbeafe" stroke="#3b82f6" strokeWidth="1.5"/>
+                  <rect x="14" y="3" width="7" height="7" rx="1.5" fill="#eff6ff" stroke="#bfdbfe" strokeWidth="1.5"/>
+                  <rect x="14" y="14" width="7" height="7" rx="1.5" fill="#dbeafe" stroke="#3b82f6" strokeWidth="1.5"/>
+                  <rect x="3" y="14" width="7" height="7" rx="1.5" fill="#eff6ff" stroke="#bfdbfe" strokeWidth="1.5"/>
                 </svg>
               </div>
               <h3 style={{ fontSize: '18px', fontWeight: '700', color: '#1f2937', marginBottom: '8px' }}>
