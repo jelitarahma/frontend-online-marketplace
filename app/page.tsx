@@ -157,9 +157,9 @@ export default function HomePage() {
             </div>
           </div>
           <div className="absolute bottom-8 right-[-20%] lg:right-[-5%] w-[120%] lg:w-[75%] h-[65%] lg:h-[100%] z-10 pointer-events-none flex items-end justify-end">
-            <div className="relative w-[80%] h-[80%] ml-auto">
+            <div className="relative w-[90%] h-[90%] ml-auto">
               <Image
-                src="/assets/landingpage.png"
+                src="/assets/landingpagehero.png"
                 alt="Furniture Collection"
                 fill
                 className="object-contain object-bottom lg:object-right-bottom drop-shadow-2xl"
@@ -235,7 +235,7 @@ export default function HomePage() {
               </div>
               <div className="absolute right-0 top-0 bottom-0 w-[45%]">
                 <Image
-                  src="https://i.pinimg.com/1200x/3c/41/25/3c4125d9738030d89827095163c6c291.jpg"
+                  src="https://i.pinimg.com/736x/b9/07/eb/b907eb7d8fec53ad45d3d74eb3f30c00.jpg"
                   alt="Fashion Collection"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
@@ -264,7 +264,7 @@ export default function HomePage() {
               </div>
               <div className="absolute right-0 top-0 bottom-0 w-[45%]">
                 <Image
-                  src="https://i.pinimg.com/1200x/26/af/45/26af4543d55cbb8cafc2ed0228be2356.jpg"
+                  src="https://i.pinimg.com/1200x/c4/e8/f3/c4e8f3202636a454548001e8c8f733b7.jpg"
                   alt="Electronics"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
