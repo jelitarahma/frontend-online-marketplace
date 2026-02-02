@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { categoryService, Category } from '@/lib/services/categoryService';
 import { productService, Product } from '@/lib/services/productService';
 import saleImage from './assets/images/sale.jpg';
+import cnyImage from './assets/images/cny.png';
 
 const COLORS = {
   primary: '#3B82F6',
@@ -91,6 +92,115 @@ function HomeProductCardSkeleton() {
   );
 }
 
+function CNYParticles() {
+  useEffect(() => {
+    const canvas = document.getElementById('cny-canvas') as HTMLCanvasElement;
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let animationFrameId: number;
+    let particles: Particle[] = [];
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    class Particle {
+      x: number;
+      y: number;
+      size: number;
+      speedY: number;
+      speedX: number;
+      rotation: number;
+      rotationSpeed: number;
+      type: 'sparkle' | 'lantern' | 'angpao';
+      color: string;
+
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 5 + 2;
+        this.speedY = Math.random() * 1 + 0.5;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.rotation = Math.random() * 360;
+        this.rotationSpeed = Math.random() * 2 - 1;
+        
+        const types: Array<'sparkle' | 'lantern' | 'angpao'> = ['sparkle', 'sparkle', 'lantern', 'angpao'];
+        this.type = types[Math.floor(Math.random() * types.length)];
+        this.color = Math.random() > 0.5 ? '#FFD700' : '#FF0000'; // Gold or Red
+      }
+
+      update() {
+        this.y += this.speedY;
+        this.x += this.speedX;
+        this.rotation += this.rotationSpeed;
+        if (this.y > canvas.height) {
+          this.y = -20;
+          this.x = Math.random() * canvas.width;
+        }
+      }
+
+      draw() {
+        if (!ctx) return;
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate((this.rotation * Math.PI) / 180);
+        
+        if (this.type === 'sparkle') {
+          ctx.fillStyle = this.color;
+          ctx.beginPath();
+          ctx.arc(0, 0, this.size / 2, 0, Math.PI * 2);
+          ctx.fill();
+        } else if (this.type === 'angpao') {
+          ctx.fillStyle = '#C41E3A'; // Darker red
+          ctx.fillRect(-this.size, -this.size * 1.5, this.size * 2, this.size * 2.5);
+          ctx.fillStyle = '#FFD700'; // Gold trim
+          ctx.fillRect(-this.size, -this.size * 1.5, this.size * 2, this.size / 2);
+          ctx.fillRect(-this.size, this.size * 0.5, this.size * 2, this.size / 2);
+        }
+        
+        ctx.restore();
+      }
+    }
+
+    const init = () => {
+      particles = [];
+      for (let i = 0; i < 80; i++) {
+        particles.push(new Particle());
+      }
+    };
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    resize();
+    init();
+    animate();
+
+    window.addEventListener('resize', resize);
+    return () => {
+      window.removeEventListener('resize', resize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return (
+    <canvas 
+      id="cny-canvas" 
+      className="fixed inset-0 pointer-events-none z-[9999]"
+      style={{ background: 'transparent' }}
+    />
+  );
+}
+
 export default function HomePage() {
   const [categories, setCategories] = useState<Category[]>([]);
   const [allProducts, setAllProducts] = useState<Product[]>([]);
@@ -122,8 +232,11 @@ export default function HomePage() {
   const dealProducts = allProducts.slice(0, 6);
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: COLORS.cream }}>
-      {/* ==================== HERO SECTION (UNCHANGED) ==================== */}
+    <div className="min-h-screen relative" style={{ backgroundColor: COLORS.cream }}>
+      {/* Particle Effect Layer - Full Page */}
+      <CNYParticles />
+
+      {/* ==================== HERO SECTION ==================== */}
       <section className="relative bg-white overflow-hidden h-[700px] lg:h-[800px] w-full flex items-center justify-center">
         <div className="relative w-full max-w-7xl h-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="absolute top-[15%] lg:top-[12%] left-[5%] lg:left-0 w-full z-0 pointer-events-none select-none text-left">
@@ -136,7 +249,7 @@ export default function HomePage() {
               </h2>
               <h1 
                 className="text-[18vw] lg:text-[220px] xl:text-[280px] font-bold leading-[0.8] tracking-tighter ml-[-5px] mb-2"
-                style={{ color: COLORS.primary, fontFamily: "'Playfair Display', serif", fontSize: '14vw' }}
+                style={{ color: '#630001', fontFamily: "'Playfair Display', serif", fontSize: '14vw' }}
               >
                 Everything
               </h1>
@@ -150,7 +263,7 @@ export default function HomePage() {
               <Link
                 href="/products"
                 className="inline-block px-5 py-3 text-white font-bold rounded-none hover:shadow-2xl text-base tracking-widest uppercase"
-                style={{ backgroundColor: COLORS.primary }}
+                style={{ backgroundColor: '#630001' }}
               >
                 Buy Now
               </Link>
@@ -159,12 +272,12 @@ export default function HomePage() {
           <div className="absolute bottom-8 right-[-20%] lg:right-[-5%] w-[120%] lg:w-[75%] h-[65%] lg:h-[100%] z-10 pointer-events-none flex items-end justify-end">
             <div className="relative w-[90%] h-[90%] ml-auto">
               <Image
-                src="/assets/landingpagehero.png"
-                alt="Furniture Collection"
+                src={cnyImage}
+                alt="Lunar New Year Collection"
                 fill
                 className="object-contain object-bottom lg:object-right-bottom drop-shadow-2xl"
                 priority
-                sizes="(max-width: 768px) 100vw, 60vw"
+                unoptimized
               />
             </div>
           </div>
@@ -178,7 +291,7 @@ export default function HomePage() {
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-xl md:text-2xl font-bold text-gray-800">Featured Categories</h3>
             <Link href="/products" className="text-blue-700 font-semibold hover:text-blue-800 text-sm flex items-center gap-1">
-              See All Deals
+              See All Products
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
@@ -249,22 +362,22 @@ export default function HomePage() {
             <Link 
               href="/products?category=electronics"
               className="group relative overflow-hidden rounded-xl h-[200px] md:h-[250px] flex items-center"
-              style={{ backgroundColor: '#F3E5F5' }}
+              style={{ backgroundColor: '#f5e5e5ff' }}
             >
               <div className="relative z-10 p-5 max-w-[60%]">
-                <p className="text-purple-600 text-xs font-semibold mb-1 uppercase tracking-wider">Latest Tech</p>
+                <p className="text-red-600 text-xs font-semibold mb-1 uppercase tracking-wider">Latest Tech</p>
                 <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-1 leading-tight">
                   Smart Gadgets<br/>& Accessories
                 </h3>
                 <span 
-                  className="inline-block mt-3 px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all group-hover:shadow-lg bg-purple-600"
+                  className="inline-block mt-3 px-4 py-2 text-sm font-semibold text-white rounded-lg transition-all group-hover:shadow-lg bg-[#660000]"
                 >
                   Discover Now
                 </span>
               </div>
               <div className="absolute right-0 top-0 bottom-0 w-[45%]">
                 <Image
-                  src="https://i.pinimg.com/1200x/c4/e8/f3/c4e8f3202636a454548001e8c8f733b7.jpg"
+                  src="https://i.pinimg.com/1200x/ec/48/61/ec4861a002b893500a9fc0b5a87ff7ff.jpg"
                   alt="Electronics"
                   fill
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-300"
@@ -310,7 +423,7 @@ export default function HomePage() {
       {/* Special Offer Banner with Countdown */}
       <section className="py-5" style={{ backgroundColor: COLORS.lightBlue }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-2xl overflow-hidden h-[300px] md:h-[350px] flex items-center" style={{ backgroundColor: '#182074' }}>
+          <div className="relative rounded-2xl overflow-hidden h-[300px] md:h-[350px] flex items-center" style={{ backgroundColor: '#630001' }}>
             {/* Left side - Text content */}
             <div className="relative z-10 p-5 md:p-12 max-w-[40%] text-white">
               <h3 className="text-3xl md:text-4xl font-bold mb-3 leading-tight text-white">
@@ -348,7 +461,7 @@ export default function HomePage() {
                 sizes="20vw"
                 unoptimized
               />
-              <div className="absolute inset-0 bg-gradient-to-r from-[#182074] via-[#182074]/10 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#630001] via-[#630001]/10 to-transparent" />
             </div>
           </div>
         </div>

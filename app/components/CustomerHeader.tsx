@@ -55,7 +55,7 @@ export default function CustomerHeader() {
 
   return (
     <>
-      <div style={{ backgroundColor: '#0f172a' }} className="py-3">
+      <div style={{ backgroundColor: '#630001' }} className="py-3">
         <div className="max-w-7xl mx-auto px-4 sm:px-2 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-2 text-white text-sm">
             <p className="text-center sm:text-left flex items-center mb-0">

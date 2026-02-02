@@ -7,7 +7,7 @@ export default function Footer() {
   const linkStyle = { textDecoration: 'none' };
 
   return (
-    <footer style={{ backgroundColor: '#0f172a', color: 'white', padding: '48px 0 0 0' }}>
+    <footer style={{ backgroundColor: '#630001', color: 'white', padding: '48px 0 0 0' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 48px 48px 48px' }}>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '48px' }}>
           <div>
@@ -45,37 +45,6 @@ export default function Footer() {
             <p style={{ color: '#ffffffff', fontSize: '14px', marginBottom: '16px' }}>
               Subscribe for special offers and updates.
             </p>
-            <form style={{ display: 'flex', gap: '8px' }}>
-              <input
-                type="email"
-                placeholder="Your email"
-                style={{ 
-                  flex: 1, 
-                  padding: '12px 16px', 
-                  backgroundColor: '#f1f5f9', 
-                  border: '1px solid #1e293b', 
-                  borderRadius: '8px', 
-                  color: '#373737ff', 
-                  fontSize: '14px',
-                  outline: 'none'
-                }}
-              />
-              <button
-                type="submit"
-                style={{ 
-                  padding: '12px 16px', 
-                  backgroundColor: '#3b82f6', 
-                  color: 'white', 
-                  borderRadius: '8px', 
-                  border: 'none',
-                  cursor: 'pointer'
-                }}
-              >
-                <svg style={{ width: '20px', height: '20px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </button>
-            </form>
           </div>
         </div>
       </div>
