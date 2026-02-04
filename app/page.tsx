@@ -103,8 +103,8 @@ function CNYParticles() {
     let particles: Particle[] = [];
 
     const resize = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.width = canvas.parentElement?.clientWidth || window.innerWidth;
+      canvas.height = canvas.parentElement?.clientHeight || window.innerHeight;
     };
 
     class Particle {
@@ -195,8 +195,8 @@ function CNYParticles() {
   return (
     <canvas 
       id="cny-canvas" 
-      className="fixed inset-0 pointer-events-none z-[9999]"
-      style={{ background: 'transparent' }}
+      className="absolute inset-0 pointer-events-none z-[60]"
+      style={{ width: '100%', height: '100%' }}
     />
   );
 }
@@ -233,11 +233,10 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen relative" style={{ backgroundColor: COLORS.cream }}>
-      {/* Particle Effect Layer - Full Page */}
-      <CNYParticles />
-
       {/* ==================== HERO SECTION ==================== */}
       <section className="relative bg-white overflow-hidden h-[700px] lg:h-[800px] w-full flex items-center justify-center">
+        {/* Particle Effect Layer - Only in Hero */}
+        <CNYParticles />
         <div className="relative w-full max-w-7xl h-full mx-auto px-4 sm:px-6 lg:px-8">
           <div className="absolute top-[15%] lg:top-[12%] left-[5%] lg:left-0 w-full z-0 pointer-events-none select-none text-left">
             <div className="relative inline-block">
