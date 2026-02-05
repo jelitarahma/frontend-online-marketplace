@@ -51,4 +51,4 @@ Aplikasi ini secara default terhubung ke backend production:
 - Konfigurasi ini terdapat di file `lib/api.js`.
 
 ---
-*Dibuat oleh Binus Learning*
+*Dibuat oleh Jelita Rahma*
